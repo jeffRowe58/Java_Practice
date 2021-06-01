@@ -29,6 +29,7 @@ public class UserTools {
             System.out.println("You have successfully logged out!");
         } else {
             System.out.println("We will keep you logged in.");
+
         }
 
     }
@@ -51,20 +52,32 @@ public class UserTools {
         }
     }
 
+    public static void changeUsername(User u){
+        if(!u.isLoggedIn()){
+            System.out.println("Sorry, you are currently not logged in. Please log in.");
+            logIn(u);
+        }else{
+            System.out.println("Please enter a new username: ");
+            String newUsername = scanner.nextLine();
+            u.setUsername(newUsername);
+            System.out.println("Your new username is " + newUsername);
+        }
+    }
+
         public static void main (String[]args){
-            User testUser = new User();
-            testUser.id = 1;
-            testUser.username = "jeffRowe";
-            // if password was public
-            //testUser.password = "password";
-            // if password was private
-            testUser.setPassword("password");
-            testUser.email = "jeffRowe@gmail.com";
+//            User testUser = new User();
+//            testUser.id = 1;
+//            testUser.username = "jeffRowe";
+//            // if password was public
+//            //testUser.password = "password";
+//            // if password was private
+//            testUser.setPassword("password");
+//            testUser.email = "jeffRowe@gmail.com";
 
 //            System.out.println("Username: " + testUser.username);
 //            System.out.println("Password: " + testUser.getPassword());
 //            System.out.println("Email: " + testUser.email);
-            logIn(testUser);
+           // logIn(testUser);
 
 
 //            User user2 = new User("codeup-dude", "gocodeup", "codeup@email.com");
@@ -73,7 +86,7 @@ public class UserTools {
 //            System.out.println("Password: " + user2.getPassword());
 //            System.out.println("Email: " + user2.email);
 
-            changePassword(testUser);
+           // changePassword(testUser);
         }
 
     }

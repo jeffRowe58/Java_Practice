@@ -24,7 +24,7 @@ public class UserManager {
             System.out.println("Sorry, you are currently logged out, please log in.");
             UserTools.logIn(u);
         }else{
-            System.out.println("Welcome to your preferences. Would you like to:\n1. Change your password.\n2. Log out");
+            System.out.println("Welcome to your preferences. What would you like to do?:\n1. Change your password.\n2. Change your username.\n3. View credentials.\n4. Log out.");
             int userChoice = scanner.nextInt();
             System.out.println("You chose to choose " + userChoice);
             switch (userChoice){
@@ -33,7 +33,15 @@ public class UserManager {
                     editPreferences(u);
                     break;
                 case 2:
+                    UserTools.changeUsername(u);
+                    editPreferences(u);
+                case 3:
+                    u.describeUser();
+                    editPreferences(u);
+                    break;
+                default:
                     UserTools.logOut(u);
+                    startMenu(u);
             }
         }
     }
@@ -52,7 +60,7 @@ public class UserManager {
 //        System.out.println("Email: " + testUser.email);
 //
 //        UserTools.logIn(testUser);
-        User user2 = new User("codeup-dude", "gocodeup", "codeup@email.com");
+        User user2 = new User(2,"codeup-dude", "gocodeup", "codeup@email.com");
 
         startMenu(user2);
     }
