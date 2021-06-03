@@ -24,9 +24,13 @@ public class Bird {
         this.name = name;
     }
     public void makeNoise(){
-        System.out.println(this.name + " goes Tweet Tweet");
+        System.out.print(this.name + " goes ");
     }
     public void move(){
         System.out.println("flap flap");
     }
+//    public Bird(String nameOfThisBird, boolean itCanFly){
+//        this.name = nameOfThisBird;
+//        this.canFly = itCanFly;
+//    }
 }

@@ -12,7 +12,8 @@ public class BirdTest {
 //        cardinal.move();
 //    }
 
-        Duck mallard = new Duck();
+        Duck mallard                                 =                 new Duck();
+        // declare a reference variable    assignment operator         call the default constructor
         mallard.setName("Mallard");
         mallard.makeNoise();
 
@@ -25,5 +26,7 @@ public class BirdTest {
         penguin.setCanFly(false);
         penguin.move();
         penguin.makeNoise();
+
+
     }
 }

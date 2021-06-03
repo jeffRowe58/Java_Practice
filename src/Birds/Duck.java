@@ -4,6 +4,7 @@ public class Duck extends Bird {
     //override
 
     public void makeNoise(){
-        System.out.println(this.getName() + " goes Quack Quack.");
+        super.makeNoise();
+        System.out.println("Quack Quack.");
     }
 }
