@@ -30,5 +30,6 @@ public class ExceptionStudy {
         }finally {
             System.out.println("This is useful isn't it.");
         }
+
     }
 }
