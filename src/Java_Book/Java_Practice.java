@@ -1,3 +1,5 @@
+package Java_Book;
+
 import java.util.Scanner;
 
 public class Java_Practice {
