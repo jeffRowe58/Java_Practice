@@ -1,6 +1,6 @@
-package assignment_02;
+package Java_Puzzles.assignment_02;
 
-import ignore.ignore2.TestingUtils;
+import Java_Puzzles.ignore.ignore2.TestingUtils;
 
 public class App {
 

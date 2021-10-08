@@ -1,6 +1,6 @@
-package assignment_03;
+package Java_Puzzles.assignment_03;
 
-import ignore.TestingUtils;
+import Java_Puzzles.ignore.ignore3.TestingUtils;
 
 public class App {
 
@@ -16,8 +16,7 @@ public class App {
 		twoSumOne(3, 2, 2) <b>---></b> false <br>
 	 */
 		public static boolean twoSumOne(int a, int b, int c) {
-			
-			return false;
+			return a + b == c || a + c == b || b + c == a;
 
 		}
 		

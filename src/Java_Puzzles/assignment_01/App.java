@@ -1,6 +1,6 @@
-package assignment_01;
+package Java_Puzzles.assignment_01;
 
-import ignore.TestingUtils;
+import Java_Puzzles.ignore.TestingUtils;
 
 public class App {
 	
@@ -17,14 +17,10 @@ public class App {
 	
 	public static String middleThree(String str) {
 		String result = str;
-
-		if(str.length() < 3){
-			int strLgth = str.length();
-			int startLetter = strLgth / 2;
-			System.out.println(startLetter);
-//			String newStr = str.charAt()
+		int begin = (int) Math.floor(str.length()/2);
+		if(str.length() > 3 && str.length() % 2 == 1) {
+			result = str.substring((begin - 1), (begin + 2));
 		}
-
 		return result;
 	}
 	

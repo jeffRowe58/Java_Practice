@@ -1,19 +1,19 @@
-package ignore.ignore2;
+package Java_Puzzles.ignore.ignore4;
 
-import assignment_02.App;
+import Java_Puzzles.assignment_04.App;
 
 public class TestingUtils {
 	public static void runTests(){
 		
 
-		int [] params1 = {60,65,65,80,85,85,70,75,75,40,40,90};
-		
-		boolean[] params2 = { false, false, true, false, false, true, false, false, true, false, true, false };
+		int[] params1 = { 70, 95, 95, 90, 90, 50, 50, 100, 100, 105, 59, 59, 60 };
 
-		int[] expected = { 0, 100, 0, 100, 200, 100, 100, 100, 100, 0, 0, 200 };
+		boolean[] params2 = { false, false, true, false, true, false, true, false, true, true, false, true, false };
+
+		boolean[] expected = { true, false, true, true, true, false, false, false, true, false, false, false, true };
         
 		for(int i=0; i < params1.length; i++){
-			int result = App.speedingFine(params1[i], params2[i]);
+			boolean result = App.birdsSinging(params1[i], params2[i]);
 			if(result == expected[i]) {
 				System.out.println(printPassResult(params1[i], params2[i], expected[i], result));
 			} else{
@@ -23,13 +23,13 @@ public class TestingUtils {
 	}
 	
 	private static String printPassResult(Object params1, Object params2, Object expected, Object result){
-		return "PASS: speedingFine("+ params1.toString()+ ", "+ params2.toString()+ ") -> " + result.toString();
+		return "PASS: birdsSinging("+ params1.toString()+ ", "+ params2.toString()+ ") -> " + result.toString();
 	}
 	
 	
 	private static String printFailResult(Object params1, Object params2, Object expected, Object result){
 		String ret = "**********************" + "\n";
-		ret += "FAIL: speedingFine("+ params1.toString()+ ", "+ params2.toString()+ ") -> " + result.toString()
+		ret += "FAIL: birdsSinging("+ params1.toString()+ ", "+ params2.toString()+ ") -> " + result.toString()
 		+ "      Expected: "+ expected.toString();
 		ret += "\n" + "**********************";
 		return ret;
