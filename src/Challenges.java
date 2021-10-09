@@ -75,5 +75,7 @@ public class Challenges {
         System.out.println(Arrays.toString(challenges.indices(new int[]{1, 4, 8, 12}, 20)));
 
         System.out.println(challenges.decryptMessage(encryptedMessage));
+
+        System.out.println("apple".compareTo("banana"));
     }
 }

@@ -17,8 +17,8 @@ public class App {
 	
 	public static String middleThree(String str) {
 		String result = str;
-		int begin = (int) Math.floor(str.length()/2);
-		if(str.length() > 3 && str.length() % 2 == 1) {
+		int begin = (str.length()/2);
+		if(str.length() > 3) {
 			result = str.substring((begin - 1), (begin + 2));
 		}
 		return result;
