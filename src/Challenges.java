@@ -66,6 +66,17 @@ public class Challenges {
         }
     }
 
+    //immuteable class
+
+    final class immutable{
+        final private int age = 40;
+        final private String name = "Jeff";
+    }
+
+    public static boolean isRotation(String str1, String str2){
+        return (str1.length() == str2.length()) && ((str1 + str1).contains(str2));
+    }
+
     public static void main(String[] args) {
         Challenges challenges = new Challenges();
         System.out.println(challenges.hasEnglish("FaagdnglishAGG"));
@@ -77,5 +88,9 @@ public class Challenges {
         System.out.println(challenges.decryptMessage(encryptedMessage));
 
         System.out.println("apple".compareTo("banana"));
+
+        System.out.println(challenges.isRotation("abcd", "bcda"));
+        System.out.println(challenges.isRotation("jeffreyrowe", "effreyrowej"));
+        System.out.println(challenges.isRotation("abcde", "bcdaf"));
     }
 }
