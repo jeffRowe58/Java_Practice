@@ -66,6 +66,8 @@ public class Challenges {
         }
     }
 
+
+
     //immuteable class
 
     final class immutable{
@@ -77,20 +79,63 @@ public class Challenges {
         return (str1.length() == str2.length()) && ((str1 + str1).contains(str2));
     }
 
+     static class TenMinWalk {
+         public static boolean isValid(char[] walk) {
+             // Insert brilliant code here
+             int north = 0;
+             int south = 0;
+             int east = 0;
+             int west = 0;
+
+             if (walk.length != 10) {
+                 return false;
+             } else {
+                 for (char i : walk) {
+                     switch (i) {
+                         case 'n':
+                             north += 1;
+                             break;
+                         case 's':
+                             south += 1;
+                             break;
+                         case 'e':
+                             east += 1;
+                             break;
+                         case 'w':
+                             west += 1;
+                             break;
+                     }
+                 }
+                 System.out.printf("%d, %d, %d, %d", north, south, east, west);
+                 if (north == 0 && south == 0) {
+                     return walk.length == 10 && east % west == 0;
+                 } else if (east == 0 & west == 0) {
+                     return walk.length == 10 && north % south == 0;
+                 } else {
+                     return walk.length == 10 && north % south == 0 && east % west == 0;
+                 }
+             }
+         }
+     }
+
     public static void main(String[] args) {
+        TenMinWalk tenMinWalk = new TenMinWalk();
         Challenges challenges = new Challenges();
-        System.out.println(challenges.hasEnglish("FaagdnglishAGG"));
-        System.out.println(challenges.hasEnglish("SMFENgliSHasnD"));
-        System.out.println(Arrays.toString(challenges.returnInt(new int[]{1, -6, 5, 4, 3, -7, -10, 201, -3})));
-        System.out.println(Arrays.toString(challenges.returnInt(null)));
-        System.out.println(Arrays.toString(challenges.indices(new int[]{1, 4, 8, 12}, 20)));
 
-        System.out.println(challenges.decryptMessage(encryptedMessage));
+        System.out.println(tenMinWalk.isValid(new char[] {'n','n','n','s','n','s','n','s','n','s'}));
 
-        System.out.println("apple".compareTo("banana"));
-
-        System.out.println(challenges.isRotation("abcd", "bcda"));
-        System.out.println(challenges.isRotation("jeffreyrowe", "effreyrowej"));
-        System.out.println(challenges.isRotation("abcde", "bcdaf"));
+//        System.out.println(challenges.hasEnglish("FaagdnglishAGG"));
+//        System.out.println(challenges.hasEnglish("SMFENgliSHasnD"));
+//        System.out.println(Arrays.toString(challenges.returnInt(new int[]{1, -6, 5, 4, 3, -7, -10, 201, -3})));
+//        System.out.println(Arrays.toString(challenges.returnInt(null)));
+//        System.out.println(Arrays.toString(challenges.indices(new int[]{1, 4, 8, 12}, 20)));
+//
+//        System.out.println(challenges.decryptMessage(encryptedMessage));
+//        System.out.println(tenMinWalk.isValid(new char[] {'n','s','n','s','n','s','n','s','n','s'}));
+//        System.out.println(tenMinWalk.isValid(new char[] {'w','e','w','e','w','e','w','e','w','e','w','e'}));
+//        System.out.println("apple".compareTo("banana"));
+//        System.out.println(challenges.isRotation("abcd", "bcda"));
+//        System.out.println(challenges.isRotation("jeffreyrowe", "effreyrowej"));
+//        System.out.println(challenges.isRotation("abcde", "bcdaf"));
     }
 }
